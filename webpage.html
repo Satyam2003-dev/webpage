@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            cursor: url(https://cur.cursors-4u.net/cursors/cur-11/cur1054.cur), auto !important;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .orbitron-link a {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .message-banner {
+            text-align: center;
+            opacity: 0.6;
+            background-color: #ffbc0b;
+            padding: 12px;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .message-banner p {
+            font-family: 'Orbitron', sans-serif !important;
+            font-size: 18px !important;
+            line-height: 0 !important;
+        }
+
+        .star-rating {
+            display: inline;
+            margin-left: 30px;
+        }
+
+        .star-rating .checked {
+            color: #ffbc0b;
+        }
+
+        .star-rating .not-checked {
+            color: #6b7664;
+        }
+
+        .inline {
+            display: inline;
+        }
+
+        footer {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            background-color: #0d2a35;
+            opacity: 0.8;
+            position: relative;
+            margin-top: 60px;
+            width: inherit;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style-type: none;
+        }
+
+        footer a {
+            line-height: 28px;
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffbc0b;
+        }
+
+        /* End site-wide styles and classes */
+
+        /* Home page */
+
+        .home-page {
+            background-image:
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.52), rgba(145, 220, 212, 0.52)), url('https://www.shore-pc.com/wp-content/uploads/2014/11/circuits-background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        #navBlink {
+            -webkit-animation-name: nav-blink;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-iteration-count: infinite;
+            animation-name: nav-blink;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        @-webkit-keyframes nav-blink {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes nav-blink {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        #home-title {
+            font-size: 40px;
+            text-align: center;
+            /* This initial title color is changed to black after title animation */
+            color: white;
+            padding-top: 54px;
+        }
+
+        #home-title div {
+            display: inline-block;
+            -webkit-animation-name: title-flash;
+            -webkit-animation-duration: 4s;
+            -webkit-animation-fill-mode: forwards;
+            animation-name: title-flash;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+        }
+
+        @-webkit-keyframes title-flash {
+            50% {
+                color: #ffbc0b;
+            }
+
+            100% {
+                color: black;
+            }
+        }
+
+        @keyframes title-flash {
+            50% {
+                color: #ffbc0b;
+            }
+
+            100% {
+                color: black;
+            }
+        }
+
+        /* Cycles through the divs surrounding each title letter, see if you can refine this. Javascript might be the way to go so you can reuse on any length of text without having to manually specify each div */
+        #home-title div:nth-child(1) {
+            animation-delay: .5s
+        }
+
+        #home-title div:nth-child(2) {
+            animation-delay: .75s
+        }
+
+        #home-title div:nth-child(3) {
+            animation-delay: 1s
+        }
+
+        #home-title div:nth-child(4) {
+            animation-delay: 1.25s
+        }
+
+        #home-title div:nth-child(5) {
+            animation-delay: 1.5s
+        }
+
+        #home-title div:nth-child(6) {
+            animation-delay: 1.75s
+        }
+
+        #home-title div:nth-child(7) {
+            animation-delay: 2s
+        }
+
+        #home-title div:nth-child(8) {
+            animation-delay: 2.25s
+        }
+
+        #home-title div:nth-child(9) {
+            animation-delay: 2.5s
+        }
+
+        #home-title div:nth-child(10) {
+            animation-delay: 2.75s
+        }
+
+        /* hexagons for menu items - if you change the size, be sure to change link line-height to keep centered inside shape and adjust font size as needed so as not to clip text */
+        .hexagon {
+            opacity: 0.9;
+            text-align: center;
+            background-image: radial-gradient(#6b7664, #0d2a35);
+            height: 246px;
+            width: 246px;
+            display: inline-block;
+            -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+            -moz-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+            -ms-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+            clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+        }
+
+        .hexagon a {
+            line-height: 246px;
+            color: white;
+        }
+
+        .hexagon a:hover {
+            color: #ffbc0b;
+        }
+
+        .nav-container {
+            margin: 0 auto;
+            width: 100%;
+            margin-bottom: 200px !important;
+        }
+
+        .nav-tiers {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            margin-bottom: -60px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 1044px) {
+            #home-title {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 744px) {
+            .mobile-hide {
+                display: none;
+            }
+        }
+
+        @media (max-width: 492px) {
+            body p {
+                font-size: 12px;
+            }
+
+            .hexagon {
+                opacity: 0.8;
+                height: 123px;
+                width: 123px;
+            }
+
+            .hexagon a {
+                line-height: 123px;
+                font-size: 8px;
+            }
+
+            .nav-tiers {
+                flex-direction: column;
+                margin-bottom: -28px;
+                align-items: center;
+            }
+
+            .hex-two {
+                margin-left: 123px !important;
+                margin-top: -28px !important;
+            }
+
+            #home-title {
+                font-size: 18px;
+            }
+
+            .about-pages-body {
+                padding: 6px;
+            }
+
+            .center-titles-mobile {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        /* About pages */
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .about-titles {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        /* About pages - title animations 1 & 2 */
+
+        .ta1 {
+            color: #ffbc0b;
+            opacity: 0;
+            display: inline;
+            animation: title-appear 3s forwards;
+        }
+
+        @-webkit-keyframes title-appear {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .ta2 {
+            color: #6b7664;
+            opacity: 0;
+            display: inline;
+            animation: title-appear 3s 3s forwards;
+        }
+
+        /* End about pages title animation */
+
+        .about-pages {
+
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-image:
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.52), rgba(145, 220, 212, 0.52));
+            background-attachment: fixed;
+
+        }
+
+        .about-pages p {
+            text-indent: 2em;
+            font-size: 18px;
+            margin: 30px 0;
+            font-family: 'Raleway', 'Roboto', sans-serif;
+            line-height: 28px;
+        }
+
+        .about-pages ul {
+            font-family: 'Raleway', 'Roboto', sans-serif;
+            font-size: 18px;
+            line-height: 28px;
+            list-style-type: none;
+        }
+
+        .about-pages-body {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .about-pages hr {
+            height: 10px;
+            border-top: 1px solid #ffbc0b !important;
+            border: 0;
+            box-shadow: inset 0 10px 10px -10px rgba(255, 188, 11, 0.5);
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="home-page">
+        <div class="message-banner">
+            <p>currently under construction</p>
+        </div>
+        <!-- Homepage title -->
+        <div id="home-title">
+            <h1>
+                <div>S</div>
+                <div>A</div>
+                <div>T</div>
+                <div>Y</div>
+                <div>M</div>
+                <div>K</div>
+                <div>U</div>
+                <div>M</div>
+                <div>A</div>
+                <div>R</div>
+            </h1>
+        </div>
+        <!-- End Homepage title -->
+        <!-- Begin Nav Container that holds all hexagons -->
+        <div class="nav-container orbitron-link">
+            <!-- Begin level one -->
+            <div class="nav-tiers">
+                <div class="hexagon" onclick="toggleList();">
+                    <a href="#">LEARN MORE <span id="navBlink">></span></a>
+                </div>
+                <div class="hexagon hex-two">
+                    <a href="#">WEB DEVELOPMENT</a>
+                </div>
+            </div>
+            <!-- End level one -->
+            <!-- Begin level two -->
+            <div class="nav-tiers">
+                <div class="hexagon">
+                    <a href="#">DIGITAL MARKETING</a>
+                </div>
+                <div class="hexagon mobile-hide">
+                </div>
+                <div class="hexagon hex-two">
+                    <a href="#">JOURNAL</a>
+                </div>
+            </div>
+            <!-- End level two -->
+            <!-- Begin level three -->
+            <div class="nav-tiers">
+                <div class="hexagon">
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="hexagon hex-two">
+                    <a href="#">CONTACT</a>
+                </div>
+            </div>
+            <!-- End level three -->
+        </div>
+        <!-- End nav container -->
+
+        <footer class="orbitron-link">
+            <ul>
+                <li><a href="#">WEB DEVELOPMENT</a></li>
+                <li><a href="#">DIGITAL MARKETING</a></li>
+                <li><a href="#">JOURNAL</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </footer>
+
+    </div>
+    <script>
+        var navDrop = document.getElementById('navDropDown');
+        function showList() {
+            navDrop.style.display = "inline-block";
+        }
+        function hideList() {
+            navDrop.style.display = "none";
+        }
+        function toggleList() {
+            if (navDrop.style.display === "inline-block") {
+                hideList()
+            } else {
+                showList()
+            }
+        }
+    </script>
+</body>
+
+</html>
